@@ -1,4 +1,6 @@
 <?php
+echo "index.php loaded<br>";
+
 require_once('db.php');
 $res = $conn->query('SELECT id, title, filename, username FROM videos ORDER BY uploaded_at DESC LIMIT 50');
 $videos = $res->fetch_all(MYSQLI_ASSOC);
