@@ -1,1 +1,10 @@
-AddType video/mp4 .mp4
+DirectoryIndex index.php
+RewriteEngine On
+
+# Serve existing files/folders directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Otherwise send everything to index.php at the repo root
+RewriteRule ^ index.php [L]
