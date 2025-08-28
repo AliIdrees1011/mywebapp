@@ -1,5 +1,5 @@
 <?php
-
+echo "php is working on azure<br>";
 
 require_once('db.php');
 $res = $conn->query('SELECT id, title, filename, username FROM videos ORDER BY uploaded_at DESC LIMIT 50');
